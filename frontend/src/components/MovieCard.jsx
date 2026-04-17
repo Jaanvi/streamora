@@ -22,7 +22,7 @@ function MovieCard({ movie, refreshMovies }) {
     if (!confirmDelete) return;
 
     try {
-      const res = await axios.delete("http://localhost:5000/api/movies/delete", {
+      const res = await axios.delete("https://streamora-6ero.onrender.com", {
         data: {
           movieId: movie._id,
           userId: user._id,
