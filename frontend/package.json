@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
 
-  "homepage": "https://your-username.github.io/streamora",
+  "homepage": "https://github.com/Jaanvi/streamora",
 
   "scripts": {
     "dev": "vite",
