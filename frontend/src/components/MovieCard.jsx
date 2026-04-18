@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
-import axios from "axios";
+import API from "../services/api";
 
 function MovieCard({ movie, refreshMovies }) {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ function MovieCard({ movie, refreshMovies }) {
     if (!confirmDelete) return;
 
     try {
-      const res = await axios.delete("https://streamora-6ero.onrender.com", {
+      const res = await API.delete("/movies/delete", {
         data: {
           movieId: movie._id,
           userId: user._id,

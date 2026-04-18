@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 
 const AdminUpload = () => {
   const [formData, setFormData] = useState({
@@ -62,15 +62,11 @@ const AdminUpload = () => {
       uploadData.append("poster", poster);
       uploadData.append("video", video);
 
-      const res = await axios.post(
-        "http://localhost:5000/api/movies/upload",
-        uploadData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const res = await API.post("/movies/upload", uploadData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       setMessage(res.data.message || "Movie uploaded successfully!");
 
